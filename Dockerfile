@@ -7,7 +7,7 @@ WORKDIR /app
 RUN mvn clean package -DskipTests=true
 
 # Use the official OpenJDK base image
-FROM openjdk:17-jdk-alpine
+FROM eclipse-temurin:17-jdk-alpine
 
 # Copy the built jar file into the container
 COPY --from=build /app/target/tms-auth-server-0.0.1-SNAPSHOT.jar /tms_auth_server_app.jar
